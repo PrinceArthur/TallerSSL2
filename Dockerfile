@@ -4,7 +4,8 @@ WORKDIR /app
 # Copy app files
 COPY . .
 
-ENV NODE_OPTIONS=--max_old_space_size=2048
+ENV GENERATE_SOURCEMAP false
+ENV NODE_OPTIONS=--max_old_space_size=800
 # Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
 RUN npm ci 
 # Build the app
